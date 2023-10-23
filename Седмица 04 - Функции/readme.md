@@ -126,8 +126,8 @@ std::cout<<combinations(5, 0)<<'\n'; // -> 1
 
 ### Пример:
 ```c++
-std::cout<<std::boolalpa<<isMagic(28)<<'\n'; // -> true
-std::cout<<std::boolalpa<<isMagic(12)<<'\n'; // -> false
+std::cout<<std::boolalpha<<isMagic(28)<<'\n'; // -> true
+std::cout<<std::boolalpha<<isMagic(12)<<'\n'; // -> false
 ```
 
 ## Задача 07 - Най-голяма сума на цифри
