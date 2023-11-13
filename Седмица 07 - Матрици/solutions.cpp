@@ -122,11 +122,11 @@ void traverse_columns(const int matrix[][MAX_SIZE],
 }
 
 void traverse_spiral(const int matrix[][MAX_SIZE], std::size_t rows, std::size_t columns) {
-  int steps_row = rows, steps_column = columns - 1;
+  int steps_row = columns, steps_column = rows - 1;
   bool right = true, top = false;
   int start_row = 0, start_column = 0;
 
-  while (steps_row > 0 || steps_column > 0) {
+  while (steps_row >= 0 && steps_column >= 0) {
     traverse_rows(matrix, steps_row--, start_row, start_column, right);
     start_column = right ? start_column + steps_row : start_column - steps_row;
     start_row = right ? start_row + 1 : start_row - 1;
@@ -142,9 +142,9 @@ void traverse_spiral(const int matrix[][MAX_SIZE], std::size_t rows, std::size_t
 
 int main() {
   int matrix[][MAX_SIZE] = {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
+        {1, 2, 3, 10, 11},
+        {4, 5, 6, 12, 13},
+        {7, 8, 9, 14, 15}
     };
 
 traverse_spiral(matrix, 3, 3); // -> 1 2 3 6 9 8 7 4 5
