@@ -169,7 +169,7 @@ int matrix[][MAX_SIZE] = {
         {7, 8, 9}
     };
 
-traverse(matrix, 3, 3); // -> 1 2 3 6 9 8 7 4 5
+traverse_spiral(matrix, 3, 3); // -> 1 2 3 6 9 8 7 4 5
 ```
 
 ## Задача 08** - Магически квадрат
