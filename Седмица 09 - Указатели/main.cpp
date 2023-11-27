@@ -63,15 +63,14 @@ const int *search(const int *first_begin, const int *first_end,
 
 const int *partition(int *begin, int *end, int element) {
   while (begin != end) {
-    if(*begin >= element) {
-      rotate(begin, begin + 1, end); // С rotate запазваме относителната наредба на елементите
-      --end;
+    if(*begin > element) {
+      rotate(begin, begin + 1, end--); // С rotate запазваме относителната наредба на елементите
     } else {
       ++begin;
     }
   }
 
-  return std::upper_bound(begin, end, element);
+  return begin;
 }
 
 int main() {
