@@ -92,6 +92,17 @@ ProductArray load_inventory(const char *inventory_filename) {
   };
 
   for (std::size_t i = 0; i < n; ++i) {
+    /* 
+       Ако искаме да вземем целия ред:
+
+       inventory.ignore();
+       inventory.getline(array.data[i].name, MAX_SIZE);
+
+       Налага се да извикаме ignore(), защото операторът >> спира да чете преди нов ред и
+       getline() започва да чете от новия ред, което означава, че първото четене ще е
+       празно. ignore() игнорира (или изхвърля) един символ и така getline() започва да чете
+       от валиден символ.
+    */
     inventory >> array.data[i].name
               >> array.data[i].quantity
               >> array.data[i].price;
